@@ -76,7 +76,6 @@ const key_override_t pipe_ko = ko_make_basic(MOD_MASK_SHIFT, KC_BSLS, FR_PIPE); 
 const key_override_t lcbr_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, FR_LCBR); // Shift + [ = {
 const key_override_t rcbr_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, FR_RCBR); // Shift + ] = }
 const key_override_t sup2_ko = ko_make_basic(MOD_MASK_SHIFT, KC_TILD, FR_SUP2); // Shift + ~ = ²
-const key_override_t dele_ko = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);  // Shift + backspace = delete
 const key_override_t **key_overrides = (const key_override_t *[]){
     &labk_ko,
     &rabk_ko,
@@ -88,7 +87,6 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &lcbr_ko,
     &rcbr_ko,
     &sup2_ko,
-    &dele_ko,
     NULL
 };
 // clang-format on
