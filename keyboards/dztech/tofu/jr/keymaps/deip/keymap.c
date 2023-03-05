@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-// `deip` keymap - Pierre_D
+// `deip` keymap - pierre_d
 // This keymap is intended for use only with french layout (AZERTY)
 
 #include QMK_KEYBOARD_H
@@ -29,7 +29,7 @@
 enum layers {
     _BL = 0, // base
     _FL,     // F* keys
-    _ML,     // macro
+    _ML,     // macros
 };
 
 enum keycodes {
@@ -76,6 +76,7 @@ const key_override_t pipe_ko = ko_make_basic(MOD_MASK_SHIFT, KC_BSLS, FR_PIPE); 
 const key_override_t lcbr_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, FR_LCBR); // Shift + [ = {
 const key_override_t rcbr_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, FR_RCBR); // Shift + ] = }
 const key_override_t sup2_ko = ko_make_basic(MOD_MASK_SHIFT, KC_TILD, FR_SUP2); // Shift + ~ = ²
+const key_override_t nolo_ko = ko_make_basic(MOD_MASK_GUI | MOD_MASK_SHIFT, KC_A, KC_NO); // Gui + Shift + Q sends "logout", remove it
 const key_override_t **key_overrides = (const key_override_t *[]){
     &labk_ko,
     &rabk_ko,
@@ -87,6 +88,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &lcbr_ko,
     &rcbr_ko,
     &sup2_ko,
+    &nolo_ko,
     NULL
 };
 // clang-format on
