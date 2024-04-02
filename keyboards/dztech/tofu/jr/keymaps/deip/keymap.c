@@ -37,7 +37,6 @@ enum keycodes {
     RARW,              // ->
     RARWD,             // =>
     RGB_RES,           // turn off RGB, but preserving Caps indicator
-    FR_ECIR,           // ê
 };
 
 // clang-format off
@@ -51,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_FL] = LAYOUT_65_ansi(
         QK_GESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_GRV,
-        RGB_RES, FR_AGRV, _______, FR_ECIR, _______, _______, _______, FR_UGRV, _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT, KC_HOME,
+        RGB_RES, FR_AGRV, _______, _______, _______, _______, _______, FR_UGRV, _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT, KC_HOME,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, KC_END,
         KC_LSFT, _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______, _______,          KC_VOLU, _______,
         KC_CAPS, _______, _______,                            _______,          _______, _______, _______,          KC_MPRV, KC_VOLD, KC_MNXT
@@ -146,10 +145,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
             rgb_matrix_sethsv_noeeprom(HSV_OFF);
             return false;
-        case FR_ECIR:
-            // send ê
-            if (record->event.pressed) SEND_STRING(SS_TAP(X_LBRC) "e");
-            return true;
         default:
             return true; // Process all other keycodes normally
     }
